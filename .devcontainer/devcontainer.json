@@ -1,0 +1,29 @@
+{
+    "name": "Hodor",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cmake-tools",
+                "llvm-vs-code-extensions.vscode-clangd"
+            ],
+            "settings": {
+                // Tells VS Code to use zsh as the default terminal shell profile
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "C_Cpp.intelliSenseEngine": "disabled",
+                "cmake.configureOnOpen": false
+            }
+        }
+    },
+    "containerEnv": {
+        "OPENROUTER_API_KEY": "${localEnv:OPENROUTER_API_KEY}"
+    },
+    "remoteUser": "ubuntu"
+}
